@@ -10,7 +10,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'jproj.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'', ds.views.view..),
+    url(r'', 'ds.views.home', name='home'),
+    #url(r'/', ds.views.view..), 
 
     # url(r'^admin/', include(admin.site.urls)),
 )

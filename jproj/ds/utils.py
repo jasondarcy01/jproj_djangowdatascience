@@ -47,3 +47,6 @@ def import_csv():
 # 	var3 = df[group].hist()
 # 	var4 = sklearn decision tree 'who more likely to survive'
 # 	finally display on browser templates and views hold var1, var2, etc..
+
+# Anaconda pacakeges, i.e. numpy are not recognized with python running seperately from Anaconda
+# Therefore I will remove python2.7 from the path -> C:\Python27;C:\Python27\Scripts;
