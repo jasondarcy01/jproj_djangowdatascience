@@ -2,10 +2,23 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<style type="text/css">.bullet { font: 10px sans-serif; }
+.bullet .marker { stroke: #000; stroke-width: 2px; }
+.bullet .tick line { stroke: #666; stroke-width: .5px; }
+.bullet .range.s0 { fill: #eee; }
+.bullet .range.s1 { fill: #ddd; }
+.bullet .range.s2 { fill: #ccc; }
+.bullet .measure.s0 { fill: lightsteelblue; }
+.bullet .measure.s1 { fill: steelblue; }
+.bullet .title { font-size: 14px; font-weight: bold; }
+.bullet .subtitle { fill: #999; }
+</style>
 </head>
 <body>
 
 	<div class="container">
+		<h4> {{n_children}} </h4>
+<h4> {{n_adult}} </h4>
 		<div class="col-md-6">
 <table class="table table-striped">
 	<thead>
@@ -28,9 +41,43 @@
 
 </tr>
 {% endfor %}
+
 </table>
-</div></div>
+</div>
+<div class="col-md-6">
+	{% if survived %}
+		<h2>{{ survived }}</h2>
+	{%endif%}
+	<form action="/" method="post">{% csrf_token %}
+		<label>Group</label>
+		<select class="form-control" name="group">
+  			<option value="1st">1st</option>
+  			<option value="2nd">2nd</option>
+  			<option value="3rd">3rd</option>
+  			<option value="Crew">Crew</option>
+		</select>
+
+		<label>Sex</label>
+		<select class="form-control" name="sex">
+  			<option value="Male">Male</option>
+  			<option value="Female">Female</option>
+		</select>
+
+		<label>Age</label>
+		<select class="form-control" name="age">
+  			<option value="Child">Child</option>
+  			<option value="Adult">Adult</option>
+		</select>
+
+  		<button type="submit" class="btn btn-default">Submit</button>
+  	</form>
+</div>
+</div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="/static/graph.js"></script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/main.js"></script>
+
 </body>
 </html>

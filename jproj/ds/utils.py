@@ -50,3 +50,4 @@ def import_csv():
 
 # Anaconda pacakeges, i.e. numpy are not recognized with python running seperately from Anaconda
 # Therefore I will remove python2.7 from the path -> C:\Python27;C:\Python27\Scripts;
+# Not sure how I would start project, i.e. django-admin file is located in Python27 Scripts
